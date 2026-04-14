@@ -49,23 +49,6 @@ git push origin feature/your-feature-name
 # Create a pull request on GitHub for review
 ```
 
-### Commit Message Conventions
-
-Follow conventional commits for clarity:
-
-- `feat:` - New features or documentation sections
-- `fix:` - Bug fixes or documentation corrections
-- `docs:` - Documentation-only changes
-- `refactor:` - Restructuring without changing functionality
-- `chore:` - Maintenance tasks
-
-Example:
-```bash
-git commit -m "feat(guides): add browser validation workflow"
-git commit -m "fix(adr): correct React Router decision rationale"
-git commit -m "docs(readme): update quick start instructions"
-```
-
 ---
 
 **Status:** Active  
@@ -286,6 +269,25 @@ Because the app is a static React SPA, common deployment options include:
 - standard web servers serving the `dist/` directory
 
 See [`runbooks/deployment.md`](runbooks/deployment.md) for detailed deployment guidance.
+## Commit Message Conventions
+
+Follow conventional commits for clarity:
+
+- `feat:` - New features or documentation sections
+- `fix:` - Bug fixes or documentation corrections
+- `docs:` - Documentation-only changes
+- `refactor:` - Restructuring without changing functionality
+- `chore:` - Maintenance tasks
+
+Example:
+```bash
+git commit -m "feat(guides): add browser validation workflow"
+git commit -m "fix(adr): correct React Router decision rationale"
+git commit -m "docs(readme): update quick start instructions"
+```
+
+---
+
 
 ---
 
