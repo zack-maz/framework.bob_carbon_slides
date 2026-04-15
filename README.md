@@ -31,24 +31,6 @@ cd framework.bob_carbon_slides
 # 4. Keep documentation in sync with your implementation
 ```
 
-### Standard Git Workflow
-
-```bash
-# Create a feature branch
-git checkout -b feature/your-feature-name
-
-# Make your changes and stage them
-git add .
-
-# Commit with a descriptive message
-git commit -m "feat: add new slide component documentation"
-
-# Push to remote
-git push origin feature/your-feature-name
-
-# Create a pull request on GitHub for review
-```
-
 ---
 
 **Status:** Active  
@@ -269,6 +251,27 @@ Because the app is a static React SPA, common deployment options include:
 - standard web servers serving the `dist/` directory
 
 See [`runbooks/deployment.md`](runbooks/deployment.md) for detailed deployment guidance.
+
+---
+
+## Standard Git Workflow
+
+```bash
+# Create a feature branch
+git checkout -b feature/your-feature-name
+
+# Make your changes and stage them
+git add .
+
+# Commit with a descriptive message
+git commit -m "feat: add new slide component documentation"
+
+# Push to remote
+git push origin feature/your-feature-name
+
+# Create a pull request on GitHub for review
+```
+
 ## Commit Message Conventions
 
 Follow conventional commits for clarity:
