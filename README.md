@@ -254,6 +254,35 @@ See [`runbooks/deployment.md`](runbooks/deployment.md) for detailed deployment g
 
 ---
 
+## Documentation Map
+
+- [`main/INDEX.md`](main/INDEX.md) — central documentation hub
+- [`main/ARCHITECTURE.md`](main/ARCHITECTURE.md) — architecture overview
+- [`HANDOFF_DOCUMENTATION.md`](HANDOFF_DOCUMENTATION.md) — maintenance and ownership guidance
+- [`guides/getting-started.md`](guides/getting-started.md) — onboarding guide
+- [`guides/contributing.md`](guides/contributing.md) — contribution workflow
+- [`guides/code-standards.md`](guides/code-standards.md) — coding standards
+- [`runbooks/development-setup.md`](runbooks/development-setup.md) — setup procedures
+- [`runbooks/troubleshooting.md`](runbooks/troubleshooting.md) — issue diagnosis and recovery
+- [`runbooks/maintenance.md`](runbooks/maintenance.md) — recurring maintenance tasks
+
+---
+
+## Recommended Workflow with Bob
+
+A practical build loop looks like this:
+
+1. Define the slide goal and content structure
+2. Create or update React slide components
+3. Add or revise metadata in [`slides.json`](src/data/slides.json)
+4. Apply Carbon-based layout and styling
+5. Run the app locally with Vite
+6. Validate interactions and rendering in the browser
+7. Use Playwright or browser tooling for repeatable verification
+8. Update documentation when architecture or procedures change
+
+---
+
 ## Standard Git Workflow
 
 ```bash
@@ -288,38 +317,6 @@ git commit -m "feat(guides): add browser validation workflow"
 git commit -m "fix(adr): correct React Router decision rationale"
 git commit -m "docs(readme): update quick start instructions"
 ```
-
----
-
-
----
-
-## Documentation Map
-
-- [`main/INDEX.md`](main/INDEX.md) — central documentation hub
-- [`main/ARCHITECTURE.md`](main/ARCHITECTURE.md) — architecture overview
-- [`HANDOFF_DOCUMENTATION.md`](HANDOFF_DOCUMENTATION.md) — maintenance and ownership guidance
-- [`guides/getting-started.md`](guides/getting-started.md) — onboarding guide
-- [`guides/contributing.md`](guides/contributing.md) — contribution workflow
-- [`guides/code-standards.md`](guides/code-standards.md) — coding standards
-- [`runbooks/development-setup.md`](runbooks/development-setup.md) — setup procedures
-- [`runbooks/troubleshooting.md`](runbooks/troubleshooting.md) — issue diagnosis and recovery
-- [`runbooks/maintenance.md`](runbooks/maintenance.md) — recurring maintenance tasks
-
----
-
-## Recommended Workflow with Bob
-
-A practical build loop looks like this:
-
-1. Define the slide goal and content structure
-2. Create or update React slide components
-3. Add or revise metadata in [`slides.json`](src/data/slides.json)
-4. Apply Carbon-based layout and styling
-5. Run the app locally with Vite
-6. Validate interactions and rendering in the browser
-7. Use Playwright or browser tooling for repeatable verification
-8. Update documentation when architecture or procedures change
 
 ---
 
