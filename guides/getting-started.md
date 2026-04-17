@@ -10,6 +10,40 @@
 
 This guide helps you get a generalized slide-building project running locally and explains the core concepts you need before making changes.
 
+---
+
+## ⚠️ Architecture Requirements (Read This First)
+
+**This framework is prescriptive.** Before you start building, understand these non-negotiable requirements:
+
+### You MUST:
+- ✅ Use **@carbon/react** components and design tokens for all UI
+- ✅ Follow the **`/slide/:slideIndex`** routing pattern with React Router
+- ✅ Maintain slide definitions in **`slides.json`**
+- ✅ Create **one component per slide** under `src/components/slides/`
+
+### You MUST NOT:
+- ❌ Build slides with plain custom CSS only (unless explicitly requested)
+- ❌ Use alternative routing patterns or hardcoded navigation
+- ❌ Store slide configuration outside of JSON
+- ❌ Combine multiple slides into monolithic components
+
+### Why This Matters
+
+These requirements are documented in the ADRs ([`adr/`](../adr/)) and enforced to ensure:
+- Consistent architecture across all implementations
+- Maintainable, modular code structure
+- Proper separation of concerns
+- Accessibility and enterprise-ready UI patterns
+
+**Speed is not an excuse to bypass these patterns.** The framework is designed to be fast to work with while maintaining these standards.
+
+See [`README.md`](../README.md#non-negotiables) for complete details.
+
+---
+
+## Workflow Assumptions
+
 The workflow documented here assumes:
 
 - slide content is implemented as React components
@@ -406,4 +440,4 @@ git push
 
 ---
 
-**Last Updated**: 2026-04-14
+**Last Updated**: 2026-04-17

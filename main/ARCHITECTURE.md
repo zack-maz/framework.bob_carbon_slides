@@ -2,6 +2,53 @@
 
 This document describes a generalized web-based slide deck application built with React, Vite, Carbon Design System, and route-driven navigation. The project was developed using MCP servers (Carbon MCP and Playwright MCP) to enhance development workflows.
 
+---
+
+## ⚠️ Prescriptive Architecture
+
+**This framework is prescriptive, not descriptive.** The architecture documented here is mandatory for all implementations. These are not suggestions or examples—they are requirements.
+
+### Architectural Mandates
+
+1. **Carbon Design System (@carbon/react)** - Required for all UI
+   - All components must use Carbon React components
+   - All styling must use Carbon design tokens
+   - Custom CSS-only implementations are rejected unless explicitly justified
+
+2. **React Router with `/slide/:slideIndex` pattern** - Required for navigation
+   - Each slide must be accessible via this route pattern
+   - Alternative routing schemes are not permitted
+   - Navigation must use centralized handlers, not direct route manipulation
+
+3. **JSON-Driven Configuration (`slides.json`)** - Required for slide metadata
+   - All slide definitions must be externalized to JSON
+   - Hardcoded slide arrays or inline configuration are not permitted
+   - Component registration must match JSON metadata exactly
+
+4. **Component-Based Architecture** - Required structure
+   - Each slide must be a separate component in `src/components/slides/`
+   - Monolithic components combining multiple slides are not permitted
+   - Component modularity and separation of concerns are mandatory
+
+### Why This Matters
+
+These constraints ensure:
+- **Consistency** across all implementations
+- **Maintainability** through clear separation of concerns
+- **Accessibility** via Carbon's enterprise-ready patterns
+- **Scalability** through modular component architecture
+
+### Enforcement
+
+Implementations that deviate from these patterns will be rejected in code review. Speed, prototyping, or "quick demos" are not valid reasons to bypass the architecture.
+
+See:
+- [`README.md`](../README.md#non-negotiables) for quick reference
+- [`guides/code-standards.md`](../guides/code-standards.md) for implementation details
+- [`adr/`](../adr/) for architectural decision records
+
+---
+
 ## System Overview
 
 The application is a single-page React presentation that renders one slide at a time using React Router and metadata from [`slides.json`](src/data/slides.json).

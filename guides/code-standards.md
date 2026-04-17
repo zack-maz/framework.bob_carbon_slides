@@ -9,6 +9,53 @@
 
 This guide defines coding standards to keep the codebase consistent, maintainable, and easy to evolve.
 
+---
+
+## ⚠️ Architectural Requirements (Non-Negotiable)
+
+**These are not suggestions—they are requirements.** The following architectural patterns are mandatory for all implementations:
+
+### Required Architecture
+1. **@carbon/react** - All UI components must use Carbon Design System
+   - Use Carbon components for layout, controls, and UI primitives
+   - Use Carbon design tokens for spacing, colors, and typography
+   - Do not create custom CSS-only UI components that duplicate Carbon functionality
+
+2. **React Router with `/slide/:slideIndex`** - Navigation must follow this pattern
+   - Each slide must be accessible via `/slide/1`, `/slide/2`, etc.
+   - Do not use alternative routing schemes or hardcoded navigation
+   - Use the shared `onNavigate()` prop for navigation logic
+
+3. **JSON Configuration (`slides.json`)** - Slide metadata must be externalized
+   - All slide definitions must be in `slides.json`
+   - Do not hardcode slide arrays or configuration in components
+   - The `component` field must exactly match the registered component key
+
+4. **Component-Based Architecture** - One component per slide
+   - Each slide must be a separate component in `src/components/slides/`
+   - Do not create monolithic components that combine multiple slides
+   - Keep slide components focused and modular
+
+### Rejected Patterns
+- ❌ Plain custom CSS-only prototypes (unless explicitly requested)
+- ❌ Alternative routing patterns that bypass `/slide/:slideIndex`
+- ❌ Hardcoded slide configuration outside JSON
+- ❌ Monolithic slide components
+- ❌ Custom UI primitives that duplicate Carbon components
+
+### Enforcement
+These requirements are documented in:
+- [`adr/0001-use-react-router.md`](../adr/0001-use-react-router.md)
+- [`adr/0002-carbon-design-system.md`](../adr/0002-carbon-design-system.md)
+- [`adr/0004-json-slide-configuration.md`](../adr/0004-json-slide-configuration.md)
+- [`adr/0005-component-based-architecture.md`](../adr/0005-component-based-architecture.md)
+
+**Code reviews will reject implementations that violate these patterns.** Speed or prototyping are not valid reasons to bypass the architecture.
+
+---
+
+## Project Assumptions
+
 The project assumptions behind these standards are:
 
 - slides are implemented as React components
@@ -468,4 +515,4 @@ When using Bob to help with implementation:
 
 ---
 
-**Last Updated**: 2026-04-14
+**Last Updated**: 2026-04-17

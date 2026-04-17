@@ -15,6 +15,35 @@ This repository provides a complete, reusable documentation structure for React-
 
 ---
 
+## Non-Negotiables
+
+This framework is **prescriptive, not descriptive**. The following architectural decisions are mandatory and must be followed in all implementations:
+
+### Required Technologies
+- **@carbon/react** - All UI components must use Carbon Design System components and tokens
+- **React Router** - Navigation must use the route pattern `/slide/:slideIndex`
+- **JSON Configuration** - Slide definitions must be maintained in `slides.json`
+- **Component Architecture** - Each slide must be implemented as a separate component under `src/components/slides/`
+
+### Rejected Patterns
+- ❌ Plain custom CSS-only prototypes (unless explicitly requested for a specific use case)
+- ❌ Alternative routing patterns that bypass `/slide/:slideIndex`
+- ❌ Hardcoded slide arrays or non-JSON configuration
+- ❌ Monolithic slide components that combine multiple slides
+
+### Why These Are Non-Negotiable
+
+These constraints are documented in:
+- [`adr/0001-use-react-router.md`](adr/0001-use-react-router.md) - Route-based navigation
+- [`adr/0002-carbon-design-system.md`](adr/0002-carbon-design-system.md) - Carbon Design System usage
+- [`adr/0004-json-slide-configuration.md`](adr/0004-json-slide-configuration.md) - JSON-driven configuration
+- [`adr/0005-component-based-architecture.md`](adr/0005-component-based-architecture.md) - Component structure
+- [`guides/code-standards.md`](guides/code-standards.md) - Implementation standards
+
+**If you're building quickly or prototyping**, you must still follow these patterns. Speed is not a valid reason to bypass the architecture. The framework is designed to be fast to work with *while* maintaining these standards.
+
+---
+
 ## Getting Started with This Framework
 
 ### Clone and Customize
@@ -339,4 +368,4 @@ Built around:
 
 ---
 
-*Last Updated: 2026-04-14*
+*Last Updated: 2026-04-17*
